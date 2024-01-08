@@ -8,17 +8,13 @@ int main() {
 	int count = 1;
 	getline(cin, a);
 	
-	for (int i = 0; i < a.length(); i++) {
+	for (int i = 0; i < a.length() - 1; i++) {
 		if (a[i] == char(' ')) {
 			count++;
 		}
 	}
 
 	if (a.front() == ' ') {
-		count--;
-	}
-
-	if (a.back() == ' ') {
 		count--;
 	}
 
