@@ -16,7 +16,6 @@ int main() {
 		count[a[i] - 65]++;
 	}
 
-
 	for (int j = 1; j < 26; j++) {
 		
 		if (count[max] < count[j]) {
