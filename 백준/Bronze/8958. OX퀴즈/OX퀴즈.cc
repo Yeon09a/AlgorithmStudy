@@ -18,8 +18,8 @@ int main() {
 		
 		for (int k = 0; k < a.length(); k++) {
 			if (a[k] == 'O') {
-				s += add + 1;
 				add++;
+				s += add;
 			}
 			else {
 				add = 0;
