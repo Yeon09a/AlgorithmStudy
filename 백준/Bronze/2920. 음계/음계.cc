@@ -3,18 +3,19 @@
 int main() {
 	
 	int i[8];
-	int r[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
-	scanf("%d %d %d %d %d %d %d %d", &i[0], &i[1], &i[2], &i[3], &i[4], &i[5], &i[6], &i[7]);
-
+	for (int k = 0; k < 8; k++) {
+		scanf("%d", &i[k]);
+	}
+	
 	for (int j = 0; j < 7; j++) {
-		if (i[j] == r[j]) {
+		if (i[j] == j + 1) {
 			if (!(i[j + 1] == i[j] + 1)) {
 				printf("mixed");
 				return 0;
 			}
 		}
-		else if (i[j] + r[j] == 9) {
+		else if (i[j] + j == 8) {
 			if (!(i[j + 1] == i[j] - 1)) {
 				printf("mixed");
 				return 0;
