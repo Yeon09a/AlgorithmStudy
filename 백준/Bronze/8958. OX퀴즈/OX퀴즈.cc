@@ -26,10 +26,8 @@ int main() {
 			}
 		}
 		add = 0;
-	}
 
-	for (int k = 0; k < c; k++) {
-		cout << s[k]<< endl;
+		cout << s[i] << endl;
 	}
 
 	return 0;
