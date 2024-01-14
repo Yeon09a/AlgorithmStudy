@@ -14,11 +14,11 @@ int main() {
 	for (int j = 0; j < n; j++) {
 		scanf("%d", &i);
 
-		if (i >= max) {
+		if (i > max) {
 			max = i;
 		}
 
-		if (i <= min) {
+		if (i < min) {
 			min = i;
 		}
 	}
