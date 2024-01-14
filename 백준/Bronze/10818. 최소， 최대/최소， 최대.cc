@@ -3,28 +3,27 @@
 int main() {
 	
 	int n;
-	int num[1000000];
 
-	int max = 0;
-	int min = 0;
+	int max = -1000001;
+	int min = 1000001;
+
+	int i;
 
 	scanf("%d", &n);
 
-	for (int i = 0; i < n; i++) {
-		scanf("%d", &num[i]);
-	}
+	for (int j = 0; j < n; j++) {
+		scanf("%d", &i);
 
-	for (int j = 1; j < n; j++) {
-		if (num[min] >= num[j]) {
-			min = j;
+		if (i >= max) {
+			max = i;
 		}
-		
-		if (num[max] <= num[j]) {
-			max = j;
+
+		if (i <= min) {
+			min = i;
 		}
 	}
 
-	printf("%d %d", num[min], num[max]);
+	printf("%d %d", min, max);
 
 	return 0;
 }
