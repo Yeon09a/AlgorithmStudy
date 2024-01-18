@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <algorithm>
 using namespace std;
 
@@ -27,7 +26,7 @@ int main() {
 	cin.ignore();
 
 	for (int k = 0; k < n; k++) {
-		getline(cin, words[k]);
+		cin >> words[k];
 	}
 
 	sort(words, words + n, cmp);
