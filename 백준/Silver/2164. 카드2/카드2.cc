@@ -9,14 +9,13 @@ int main() {
 	scanf("%d", &n);
 
 	for (int i = 0; i < n; i++) {
-		card.push(i + 1);
+		card.emplace (i + 1);
 	}
 
 	while (card.size() > 1) {
 		card.pop();
-		int num = card.front();
+		card.emplace(card.front());
 		card.pop();
-		card.push(num);
 	}
 
 	printf("%d", card.front());
