@@ -9,12 +9,12 @@ int main() {
 	scanf("%d", &n);
 
 	for (int i = 0; i < n; i++) {
-		card.emplace (i + 1);
+		card.push (i + 1);
 	}
 
 	while (card.size() > 1) {
 		card.pop();
-		card.emplace(card.front());
+		card.push(card.front());
 		card.pop();
 	}
 
