@@ -5,13 +5,12 @@ using namespace std;
 
 int main() {
 
-	int n;
+	int n, num;
 	vector<int> arr;
 
 	scanf("%d", &n);
 
 	for (int j = 0; j < n; j++) {
-		int num;
 		scanf("%d", &num);
 		arr.push_back(num);
 	}
