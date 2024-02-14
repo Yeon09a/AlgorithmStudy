@@ -4,9 +4,7 @@ int getPeople(int k, int n) {
 	int count = 0;
 	
 	if (k == 0) {
-		for (int i = 1; i <= n; i++) {
-			count += i;
-		}
+		count = n;
 	}
 	else {
 		for (int i = 1; i <= n; i++) {
@@ -27,7 +25,7 @@ int main() {
 		scanf("%d", &k);
 		scanf("%d", &n);
 
-		printf("%d\n", getPeople(k - 1, n));
+		printf("%d\n", getPeople(k, n));
 	}
 	
 	return 0;
