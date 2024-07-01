@@ -3,18 +3,16 @@
 #include <string.h>
 
 int main() {
-	int a, b, c;
-	char str1[1001];
-	char str2[1001];
+	char a[1001];
+	char b[1001];
+	char c[1001];
 	
-	scanf("%d", &a);
-	scanf("%d", &b);
-	scanf("%d", &c);
+	scanf("%s", &a);
+	scanf("%s", &b);
+	scanf("%s", &c);
 
-	printf("%d\n", a + b - c);
+	printf("%d\n", atoi(a) + atoi(b) - atoi(c));
 
-	sprintf(str1, "%d", a);
-	sprintf(str2, "%d", b);
-	strcat(str1, str2);
-	printf("%d", atoi(str1) - c);
+	strcat(a, b);
+	printf("%d", atoi(a) - atoi(c));
 }
