@@ -1,42 +1,33 @@
 #include <stdio.h>
+#include <queue>
 
 using namespace std;
 
 int main() {
 	int n, k;
-	bool bnums[1001] = { false, };
-	int nums[1001];
+	queue<int> q;
 
 	scanf("%d %d", &n, &k);
-	
-	int count = n;
-	int bindex = 0;
-	int index = 0;
 
-	while (count > 0) {
-		int i = k;
-
-		while (i > 0) {
-			bindex++;
-
-			if (bindex > n) {
-				bindex = 1;
-			}
-			
-			if (!bnums[bindex]) {
-				i--;
-			}
-		}
-
-		bnums[bindex] = true;
-		nums[index] = bindex;
-		index++;
-		count--;
+	for (int i = 1; i <= n; i++) {
+		q.push(i);
 	}
 
 	printf("<");
-	for (int i = 0; i < n - 1; i++) {
-		printf("%d, ", nums[i]);
+
+	while (!q.empty()) {
+		for (int j = 0; j < k - 1; j++) {
+			q.push(q.front());
+			q.pop();
+		}
+
+		printf("%d", q.front());
+		if (q.size() != 1 ) {
+			printf(", ");
+		}
+		q.pop();
+
 	}
-	printf("%d>", nums[n - 1]);
+
+	printf(">");
 }
