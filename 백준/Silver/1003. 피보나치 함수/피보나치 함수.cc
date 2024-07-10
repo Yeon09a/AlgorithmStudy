@@ -1,36 +1,22 @@
 #include <stdio.h>
+#include <algorithm>
 using namespace std;
 
-int arr_0[41] = { 0, };
-int arr_1[41] = { 0, };
+pair<int, int> arr[41];
 
-int fibonacci_0(int n) {
+pair<int, int> fibonacci(int n) {
     if (n == 0) {
-        return 1;
+        return arr[0];
     }
     else if (n == 1) {
-        return 0;
+        return arr[1];
     }
 
-    if (arr_0[n] == 0) {
-        arr_0[n] = fibonacci_0(n - 1) + fibonacci_0(n - 2);
-    }
-    return arr_0[n];
-}
-
-int fibonacci_1(int n) {
-    if (n == 0) {
-        return 0;
-    }
-    else if (n == 1) {
-        return 1;
+    if (arr[n] == make_pair(0, 0)){
+        arr[n] = make_pair(fibonacci(n - 1).first + fibonacci(n - 2).first, fibonacci(n - 1).second + fibonacci(n - 2).second);
     }
 
-    if (arr_1[n] == 0) {
-        arr_1[n] = fibonacci_1(n - 1) + fibonacci_1(n - 2);
-    }
-
-    return arr_1[n];
+    return arr[n];
 }
 
 int main() {
@@ -38,11 +24,18 @@ int main() {
 
     scanf("%d", &t);
 
+    arr[0].first = 1;
+    arr[0].second = 0;
+    arr[1].first = 0;
+    arr[1].second = 1;
+
     for (int i = 0; i < t; i++) {
         int num;
         scanf("%d", &num);
 
-        printf("%d %d\n", fibonacci_0(num), fibonacci_1(num));
+        pair<int, int> p = fibonacci(num);
+
+        printf("%d %d\n", p.first, p.second);
     }
 
 }
